@@ -21,20 +21,10 @@ public class CountryRepositoryTests {
     @Autowired
     ObjectMapper om;
 
-    @Autowired
-    EntityManager em;
-
     @Test
-    void awarmup() throws JsonProcessingException {
-        db.getAll();
-        em.clear();
-    }
-
-  @Test
     void testGetAll() throws JsonProcessingException {
         var l = db.getAll();
         om.writeValueAsString(l);
     }
-    
- 
+
 }

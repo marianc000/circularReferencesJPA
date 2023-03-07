@@ -24,7 +24,7 @@ public class CountryRepository {
                 "SELECT c FROM Country c left join c.authors a "
                 + "left join a.posts p left join p.likes l"
                 + " order by c.COUNTRY_NAME,a.AUTHOR_NAME,p.POST_NAME,l.AUTHOR_NAME")
-            //    .setHint("eclipselink.left-join-fetch", "c.authors.posts.likes")
+                .setHint("eclipselink.left-join-fetch", "c.authors.posts.likes")
                 .setHint("eclipselink.read-only", true)
                 .getResultList();
 
